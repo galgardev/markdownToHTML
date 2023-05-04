@@ -3,38 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Convertidor de Markdown a HTML</title>
+    <title>markdownToHTML | galgardev</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </head>
 
-<body>
-    <form enctype="multipart/form-data">
-        <label>Seleccione un archivo .md:</label>
-        <input type="file" accept=".md">
-        <br>
-        <button type="button" onclick="convertir()">Convertir</button>
+<body id="render-form">
+    <h1>Conversor de Markdown a HTML</h1>
+    <form>
+        <input type="file" id="uploadedFile" accept=".md">
+        <button type="button" onclick="render()">Renderizar</button>
     </form>
-    <div id="resultado"></div>
-    <script src="./assets/js/marked.min.js"></script>
-    <script>
-        function convertir() {
-            const archivo = document.querySelector('input[type=file]').files[0];
-            if (!archivo) {
-                alert('Por favor seleccione un archivo.');
-                return;
-            }
-            const lector = new FileReader();
-            lector.onload = function (evento) {
-                const contenido = evento.target.result;
-                const html = marked(contenido);
-                const resultado = document.getElementById('resultado');
-                resultado.innerHTML = html;
-            }
-            lector.readAsText(archivo);
-        }
-    </script>
-    <style>
-
-    </style>
 </body>
 
 </html>

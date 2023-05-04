@@ -1,0 +1,188 @@
+    @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;600&display=swap);
+
+    body p,
+    h5,
+    li {
+        line-height: var(--line-height-m)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    ul {
+        color: var(--content-color-primary)
+    }
+
+    :root {
+        --base-color-info: #097bed;
+        --base-color-warning: #ffb400;
+        --base-color-error: #eb2013;
+        --base-color-success: #0cbb52;
+        --content-color-primary: #212121;
+        --content-color-secondary: #6B6B6B;
+        --content-color-tertiary: #DDDDDD;
+        --content-color-link: #0265D2;
+        --code-color-attribute: #c92c2c;
+        --code-color-keyword: #1990b8;
+        --code-color-literal: #1990b8;
+        --code-color-number: #c92c2c;
+        --code-color-string: #2f9c0a;
+        --code-color-value: #1990b8;
+        --text-family-default: "Inter", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, Arial, sans-serif;
+        --text-family-code: "IBM Plex Mono", "Cousine", monospace;
+        --text-size-m: 12px;
+        --text-size-l: 14px;
+        --text-size-xl: 16px;
+        --text-size-xxl: 18px;
+        --text-size-xxxl: 24px;
+        --line-height-m: 20px;
+        --line-height-l: 20px;
+        --line-height-xl: 24px;
+        --line-height-xxl: 28px;
+        --line-height-xxxl: 32px;
+        --text-weight-regular: 400;
+        --text-weight-bold: 600
+    }
+
+    html body {
+        font-size: var(--text-size-m)
+    }
+
+    body {
+        font-family: var(--text-family-default);
+        font-feature-settings: "calt" 0;
+        font-weight: var(--text-weight-regular);
+        margin: 0 auto;
+        max-width: 768px;
+        padding: 3em 1.5em
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    strong {
+        font-weight: var(--text-weight-bold)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-top: 32px;
+        overflow: hidden;
+        overflow-wrap: break-word
+    }
+
+    h1 {
+        font-size: var(--text-size-xxxl);
+        line-height: var(--line-height-xxxl)
+    }
+
+    h2 {
+        font-size: var(--text-size-xxl);
+        line-height: var(--line-height-xxl)
+    }
+
+    h3 {
+        font-size: var(--text-size-xl);
+        line-height: var(--line-height-xl)
+    }
+
+    h4 {
+        font-size: var(--text-size-l);
+        line-height: var(--line-height-l)
+    }
+
+    h5,
+    p,
+    pre {
+        font-size: var(--text-size-m)
+    }
+
+    pre {
+        height: 100%;
+        line-height: 18px;
+        margin: 0;
+        padding: 5px 10px
+    }
+
+    code {
+        font-family: var(--text-family-code);
+        border: 0;
+        border-radius: 5px;
+        color: var(--content-color-secondary)
+    }
+
+    code .hljs-attribute {
+        color: var(--code-color-attribute)
+    }
+
+    code .hljs-keyword {
+        color: var(--code-color-keyword)
+    }
+
+    code .hljs-literal {
+        color: var(--code-color-literal)
+    }
+
+    code .hljs-number {
+        color: var(--code-color-number)
+    }
+
+    code .hljs-string {
+        color: var(--code-color-string)
+    }
+
+    code .hljs-value {
+        color: var(--code-color-value)
+    }
+
+    hr {
+        height: 1px;
+        background-color: var(--content-color-tertiary);
+        border: none;
+        margin: 2em 0
+    }
+
+    ul {
+        margin: 16px 0 0 4px;
+        padding: 0 0 0 12px
+    }
+
+    ul ul {
+        margin: 0;
+    }
+
+    a {
+        color: var(--content-color-link);
+        text-decoration: none
+    }
+
+    a:hover {
+        text-decoration: underline
+    }
+
+    p {
+        word-break: break-word
+    }
+
+    ul p {
+        margin: 0;
+    }
+
+    @media print {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            page-break-after: avoid
+        }
+    }
