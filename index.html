@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <title>markdownToHTML | galgardev</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <link rel="stylesheet" href="./assets/css/prism.css">
 </head>
 
 <body id="render-form">
     <h1>Conversor de Markdown a HTML</h1>
     <form>
         <input type="file" id="uploadedFile" accept=".md">
-        <button type="button" onclick="render()">Renderizar</button>
+        <button type="button" onclick="renderMarkdown()">Renderizar</button>
     </form>
+    <script src="./assets/js/marked.min.js"></script>
+    <script src="./assets/js/prism.min.js"></script>
+    <script src="./assets/js/main.min.js"></script>
 </body>
 
 </html>

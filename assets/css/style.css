@@ -25,12 +25,6 @@
         --content-color-secondary: #6B6B6B;
         --content-color-tertiary: #DDDDDD;
         --content-color-link: #0265D2;
-        --code-color-attribute: #c92c2c;
-        --code-color-keyword: #1990b8;
-        --code-color-literal: #1990b8;
-        --code-color-number: #c92c2c;
-        --code-color-string: #2f9c0a;
-        --code-color-value: #1990b8;
         --text-family-default: "Inter", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, Arial, sans-serif;
         --text-family-code: "IBM Plex Mono", "Cousine", monospace;
         --text-size-m: 12px;
@@ -108,6 +102,8 @@
     pre {
         line-height: 18px;
         margin: 0;
+        border: 1px solid rgb(230, 230, 230);
+        border-radius: 4px;
         padding: 5px 10px
     }
 
@@ -118,28 +114,43 @@
         color: var(--content-color-secondary)
     }
 
-    code .hljs-attribute {
-        color: var(--code-color-attribute)
+    code .token.punctuation {
+        color: #5f6364;
     }
 
-    code .hljs-keyword {
-        color: var(--code-color-keyword)
+    code .token.property,
+    code .token.tag,
+    code .token.boolean,
+    code .token.number,
+    code .token.function-name,
+    code .token.constant,
+    code .token.symbol,
+    code .token.deleted {
+        color: #c92c2c;
     }
 
-    code .hljs-literal {
-        color: var(--code-color-literal)
+    code .token.operator,
+    code .token.entity,
+    code .token.url,
+    code .token.variable {
+        color: #a67f59;
     }
 
-    code .hljs-number {
-        color: var(--code-color-number)
+    code .token.selector,
+    code .token.attr-name,
+    code .token.string,
+    code .token.char,
+    code .token.function,
+    code .token.builtin,
+    code .token.inserted {
+        color: #2f9c0a;
     }
 
-    code .hljs-string {
-        color: var(--code-color-string)
-    }
-
-    code .hljs-value {
-        color: var(--code-color-value)
+    code .token.atrule,
+    code .token.attr-value,
+    code .token.keyword,
+    code .token.class-name {
+        color: #1990b8;
     }
 
     hr {
