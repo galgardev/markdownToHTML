@@ -3,17 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>markdownToHTML | galgardev</title>
+    <title>Markdown a HTML | galgardev</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/prism.css">
 </head>
 
-<body id="render-form">
-    <h1>Conversor de Markdown a HTML</h1>
-    <form>
+<body>
+    <h1>Markdown a HTML</h1>
+    <p>Convierte tus archivos Markdown a HTML en un solo clic con esta herramienta.</p>
+    <form id="upload-form">
         <input type="file" id="uploadedFile" accept=".md">
+        <p>Arrastra y suelta un archivo o haz clic aquí para seleccionarlo</p>
         <button type="button" onclick="renderMarkdown()">Renderizar</button>
     </form>
+    <section id="app-descripction">
+        <h2>¿Qué es esto?</h2>
+        <p>Esta aplicación, aparte de renderizar tus archivos Markdown en HTML, les aplica estilos elegantes y
+            minimalistas, de modo que puedas imprimirlos, exportarlos a PDF con tu navegador o, simplemente,
+            almacenarlos en tu ordenador.
+        </p>
+        <p>Las últimas funcionalidades que he implementado han sido las siguientes:</p>
+        <ul>
+            <li>El título del documento HTML será el mismo que hayas indicado como <em>Cabecera 1</em> en tu archivo. En
+                Markdown: <code># Title</code>.
+            </li>
+            <li>Añade el atributo <code>target="_blank"</code> a tus enlaces, excepto a aquellos que estén en el
+                índice,
+                siempre y cuando éste se encuentre al principio del documento.
+            </li>
+            <li>Respeta las <em>ToC</em> o tablas de contenido que hayas creado en tu archivo Markdown. Siempre y
+                cuando
+                tus enlaces sean funcionales, lo serán también en el HTML generado. Incluso lo seguirán siendo si
+                exportas el HTML a PDF. Por ejemplo, con Google Chrome.</li>
+            <li>Resalta la sintaxis de tus fragmentos de código SQL, JSON, Shell y Kotlin (por ahora). Basta con que
+                especifiques el lenguaje tras indicar la apertura del código. Por ejemplo: <code>``` json</code>.
+            </li>
+        </ul>
+        <p>Esta aplicación ha sido desarrollada usando únicamente HTML, CSS y JS. Además, utiliza las librerías
+            <strong>marked.js</strong> y <strong>prism.js</strong>.
+        </p>
+    </section>
+    <div id="md-logo">
+        <a href="https://es.wikipedia.org/wiki/Markdown" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 128">
+                <rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none" />
+                <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" />
+            </svg>
+        </a>
+    </div>
+    <footer id="app-signature">
+        <p>By <a href="https://galgar.dev" target="_blank">galgar.dev</a> with ❤️</p>
+    </footer>
     <script src="./assets/js/marked.min.js"></script>
     <script src="./assets/js/prism.min.js"></script>
     <script src="./assets/js/main.min.js"></script>
