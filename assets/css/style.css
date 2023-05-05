@@ -312,7 +312,7 @@ ul p {
 }
 
 #app-title h1 {
-    font-family: Tofino, 'Tofino Condensed Bold';
+    font-family: 'Tofino Condensed Bold';
     font-size: 56px;
     line-height: normal;
     margin-bottom: var(--spacing-l);
