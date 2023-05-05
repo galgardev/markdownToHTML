@@ -234,9 +234,22 @@ ul p {
     }
 }
 
-/* Upload page */
+/* MD App */
 
-#upload-form {
+#md-app .app-header h1 {
+    font-family: 'Tofino Condensed Bold';
+    font-size: 56px;
+    line-height: normal;
+    margin-bottom: var(--spacing-l);
+    text-transform: uppercase;
+}
+
+#md-app .app-header .accent,
+#md-app .app-signature .accent {
+    color: var(--base-color-brand);
+}
+
+#md-app .app-form {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -245,7 +258,7 @@ ul p {
     border-radius: var(--border-radius-default);
 }
 
-#upload-form p {
+#md-app .app-form p {
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
@@ -255,7 +268,7 @@ ul p {
     z-index: -1;
 }
 
-#upload-form input {
+#md-app .app-form input {
     position: relative;
     margin: var(--spacing-zero);
     padding: var(--spacing-zero);
@@ -266,7 +279,7 @@ ul p {
     opacity: 0;
 }
 
-#upload-form button {
+#md-app .app-form button {
     align-items: center;
     background-color: var(--base-color-brand);
     border: 0;
@@ -291,43 +304,31 @@ ul p {
     -webkit-user-select: none;
 }
 
-#upload-form button:hover {
+#md-app .app-form button:hover {
     background-color: var(--highlight-background-color-brand);
     transition-duration: 0.2s;
 }
 
-#md-logo {
+#md-app .app-description {
+    margin-top: var(--spacing-xl);
+}
+
+#md-app .app-signature p {
     margin-top: var(--spacing-xl);
     text-align: center;
 }
 
-#md-logo svg {
+#md-app .md-logo {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+#md-app .md-logo svg {
     height: 24px;
     width: auto;
 }
 
-#app-title {
+#md-app .app-header {
     margin-bottom: var(--spacing-xxl);
-    text-align: center;
-}
-
-#app-title h1 {
-    font-family: 'Tofino Condensed Bold';
-    font-size: 56px;
-    line-height: normal;
-    margin-bottom: var(--spacing-l);
-    text-transform: uppercase;
-}
-
-#app-title h1 .accent {
-    color: var(--base-color-brand);
-}
-
-#app-descripction {
-    margin-top: var(--spacing-xl);
-}
-
-#app-signature p {
-    margin-top: var(--spacing-xl);
     text-align: center;
 }

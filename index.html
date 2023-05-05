@@ -3,24 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown a HTML | galgardev</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://galgardev.netlify.app/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://galgardev.netlify.app/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://galgardev.netlify.app/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://galgardev.netlify.app/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://galgardev.netlify.app/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://galgardev.netlify.app/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://galgardev.netlify.app/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://galgardev.netlify.app/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://galgardev.netlify.app/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://galgardev.netlify.app/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://galgardev.netlify.app/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://galgardev.netlify.app/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://galgardev.netlify.app/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#FF6B6B">
+    <meta name="msapplication-TileImage" content="https://galgardev.netlify.app/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#FF6B6B">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- <link rel="stylesheet" href="./assets/font/tofinocond-bold.woff2">
     <link rel="stylesheet" href="./assets/font/ibmplexmono.woff2">
     <link rel="stylesheet" href="./assets/font/inter.woff2"> -->
 </head>
 
-<body>
-    <header id="app-title">
+<body id="md-app">
+    <header class="app-header">
         <h1>Markdown a <span class="accent">HTML</span></h1>
         <p>Convierte tus archivos Markdown a HTML en un solo clic con esta herramienta.</p>
     </header>
-    <form id="upload-form">
+    <form class="app-form">
         <input type="file" id="uploadedFile" accept=".md">
         <p>Arrastra y suelta un archivo o haz clic aquí para seleccionarlo</p>
         <button type="button" onclick="renderMarkdown()">Renderizar</button>
     </form>
-    <section id="app-descripction">
+    <section class="app-descripction">
         <h2>¿Qué es esto?</h2>
         <p>Esta aplicación, aparte de renderizar tus archivos Markdown en HTML, les aplica estilos elegantes y
             minimalistas, de modo que puedas imprimirlos, exportarlos a PDF con tu navegador o, simplemente,
@@ -47,16 +67,16 @@
             <strong>marked.js</strong> y <strong>prism.js</strong>.
         </p>
     </section>
-    <div id="md-logo">
-        <a href="https://es.wikipedia.org/wiki/Markdown" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 128">
-                <rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none" />
-                <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" />
-            </svg>
-        </a>
-    </div>
-    <footer id="app-signature">
-        <p>By <a href="https://galgar.dev" target="_blank">galgar.dev</a> with ❤️</p>
+    <footer class="app-signature">
+        <p>By <a href="https://galgar.dev" target="_blank">galgar.dev</a> with <span class="accent">❤️</span></p>
+        <div class="md-logo">
+            <a href="https://es.wikipedia.org/wiki/Markdown" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 128">
+                    <rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none" />
+                    <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" />
+                </svg>
+            </a>
+        </div>
     </footer>
     <script src="./assets/js/marked.min.js"></script>
     <script src="./assets/js/prism.min.js"></script>
