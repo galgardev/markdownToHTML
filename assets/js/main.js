@@ -1,4 +1,4 @@
-const CSS_PATH = "./assets/css/style.css";
+const CSS_PATH = "./assets/css/style.min.css";
 const FIRST_UL_SELECTOR = "ul:first-of-type";
 
 function addTargetBlankToLinks(document) {
@@ -26,7 +26,10 @@ function renderMarkdown() {
         const codeBlocks = tmpElement.querySelectorAll("code");
         codeBlocks.forEach((block) => {
             const language = block.className.replace(/^language-/, "");
-            block.innerHTML = Prism.highlight(block.textContent, Prism.languages[language], language);
+            // Checks if the language is defined
+            if (language && Prism.languages[language]) {
+                block.innerHTML = Prism.highlight(block.textContent, Prism.languages[language], language);
+            }
         });
 
         const newTab = window.open("");
