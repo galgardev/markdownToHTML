@@ -3,81 +3,134 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown a HTML | galgardev</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="https://galgardev.netlify.app/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://galgardev.netlify.app/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://galgardev.netlify.app/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://galgardev.netlify.app/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://galgardev.netlify.app/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://galgardev.netlify.app/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://galgardev.netlify.app/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://galgardev.netlify.app/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://galgardev.netlify.app/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="https://galgardev.netlify.app/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://galgardev.netlify.app/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://galgardev.netlify.app/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://galgardev.netlify.app/favicon/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#FF6B6B">
-    <meta name="msapplication-TileImage" content="https://galgardev.netlify.app/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#FF6B6B">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <meta name="description"
+        content="Convierte y da formato a tus archivos Markdown a HTML en un solo clic con esta herramienta">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#771982">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index,follow">
+    <title>mdHTML | Convierte y da formato a tus archivos Markdown a HTML en un solo clic con esta herramienta</title>
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png"> -->
+    <link rel="manifest" href="./assets/img/site.webmanifest">
+    <link rel="stylesheet" href="./assets/css/beer.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
+    <link rel="stylesheet" href="./assets/css/app.min.css">
 </head>
 
-<body id="md-app">
-    <header class="app-header">
-        <h1>Markdown a <span class="accent">HTML</span></h1>
-        <p>Convierte tus archivos Markdown a HTML en un solo clic con esta herramienta.</p>
-    </header>
-    <form class="app-form">
-        <input type="file" id="uploadedFile" accept=".md">
-        <p>Arrastra y suelta un archivo o haz clic aquí para seleccionarlo</p>
-        <button type="button" onclick="renderMarkdown()">Renderizar</button>
-    </form>
-    <section class="app-descripction">
-        <h2>¿Qué es esto?</h2>
-        <p>Esta aplicación, aparte de renderizar tus archivos Markdown en HTML, les aplica estilos elegantes y
-            minimalistas, de modo que puedas imprimirlos, exportarlos a PDF con tu navegador o, simplemente,
-            almacenarlos en tu ordenador.
-        </p>
-        <p>Las últimas funcionalidades que he implementado han sido las siguientes:</p>
-        <ul>
-            <li>El título del documento HTML será el mismo que hayas indicado como <em>Cabecera 1</em> en tu archivo. En
-                Markdown: <code># Title</code>.
-            </li>
-            <li>Añade el atributo <code>target="_blank"</code> a tus enlaces, excepto a aquellos que estén en el
-                índice,
-                siempre y cuando éste se encuentre al principio del documento.
-            </li>
-            <li>Respeta las <em>ToC</em> o tablas de contenido que hayas creado en tu archivo Markdown. Siempre y
-                cuando
-                tus enlaces sean funcionales, lo serán también en el HTML generado. Incluso lo seguirán siendo si
-                exportas el HTML a PDF. Por ejemplo, con Google Chrome.</li>
-            <li>Resalta la sintaxis de tus fragmentos de código SQL, JSON, Shell y Kotlin (por ahora). Basta con que
-                especifiques el lenguaje tras indicar la apertura del código. Por ejemplo: <code>``` json</code>.
-            </li>
-        </ul>
-        <p>Esta aplicación ha sido desarrollada usando únicamente HTML, CSS y JS. Además, utiliza las librerías
-            <strong>marked.js</strong> y <strong>prism.js</strong>.
-        </p>
-    </section>
-    <footer class="app-signature">
-        <p>By <a href="https://galgar.dev" target="_blank">galgar.dev</a> with <span class="accent">❤️</span></p>
-        <div class="md-logo">
-            <a href="https://es.wikipedia.org/wiki/Markdown" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 128">
-                    <rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none" />
-                    <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" />
-                </svg>
+<body>
+    <header class="responsive">
+        <nav>
+            <div class="max"></div>
+            <a class="button transparent circle" href="https://es.wikipedia.org/wiki/Markdown" target="_blank"
+                aria-label="Markdown en Wikipedia">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g>
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm4 12.5v-4l2 2 2-2v4h2v-7h-2l-2 2-2-2H5v7h2zm11-3v-4h-2v4h-2l3 3 3-3h-2z" />
+                        </g>
+                    </svg>
+                </i>
             </a>
+            <a class="button transparent circle" href="https://github.com/galgardev/mdhtml" target="_blank"
+                aria-label="galgar.dev en GitHub">
+                <i>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z">
+                        </path>
+                    </svg>
+                </i>
+            </a>
+            <button id="theme-toggle" class="transparent circle"><i class="page top active">light_mode</i></button>
+        </nav>
+    </header>
+    <main class="responsive medium-line">
+        <div class="grid">
+            <div class="s12 medium-padding">
+                <article id="hero" class="no-elevate round no-padding medium">
+                    <img class="responsive" src="./assets/img/bg.jpg" alt="Abstract Illustration" draggable="false">
+                    <div class="absolute middle center-align white-text large-padding">
+                        <h1 class="large large-margin">mdHTML</h1>
+                        <h6 class="large-margin">Convierte y da formato a tus archivos Markdown a HTML en un solo clic
+                            con
+                            esta
+                            herramienta.</h6>
+                    </div>
+                </article>
+            </div>
+            <div class="s12 m12 l12">
+                <div class="medium-padding">
+                    <div class="medium-height middle-align center-align border round">
+                        <div class="center-align">
+                            <i class="extra">upload</i>
+                            <h5 class="center-align">Sube tu archivo Markdown</h5>
+                            <p class="center-align">Arrastra y suelta aquí un archivo o haz clic para
+                                seleccionarlo.</p>
+                            <div class="space"></div>
+                            <nav class="center-align">
+                                <button id="renderButton" type="button" onclick="renderMarkdown()"
+                                    class="large responsive">Renderizar</button>
+                            </nav>
+                        </div>
+                        <input type="file" id="uploadedFile" name="uploadedFile" accept=".md">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="small-space"></div>
+        <h2 class="medium-margin">¿Cómo funciona?</h2>
+        <div class="grid">
+            <div class="s12 m12 l6">
+                <article class="round no-elevate medium-padding">
+                    <h6>Convierte y formatea</h6>
+                    <p>La aplicación permite cargar un archivo Markdown y convertirlo en un documento HTML con un
+                        formato elegante y minimalista. Utiliza la biblioteca "marked" para realizar la conversión y
+                        genera un HTML bien formateado a partir del contenido Markdown proporcionado.</p>
+                </article>
+            </div>
+            <div class="s12 m12 l6">
+                <article class="round no-elevate medium-padding">
+                    <h6>Tabla de contenidos</h6>
+                    <p>La aplicación reconoce la estructura de encabezados (Table of Contents) en el archivo Markdown y
+                        crea un índice de navegación basado en ellos. Los enlaces en el índice son funcionales, lo que
+                        significa que al hacer clic en un enlace, el usuario se desplazará automáticamente a la sección
+                        correspondiente del documento HTML.</p>
+                </article>
+            </div>
+            <div class="s12 m12 l6">
+                <article class="round no-elevate medium-padding">
+                    <h6>Enlaces externos</h6>
+                    <p>La aplicación identifica los enlaces que no forman parte del índice y los configura para abrirse
+                        en una nueva pestaña del navegador. Esto mejora la experiencia de usuario al permitir que los
+                        lectores exploren los enlaces externos sin perder el contexto del documento actual. </p>
+                </article>
+            </div>
+            <div class="s12 m12 l6">
+                <article class="round no-elevate medium-padding">
+                    <h6>Resaltado de sintaxis</h6>
+                    <p>Si se detectan bloques de código en el archivo Markdown, la aplicación utiliza la biblioteca
+                        "Prism" para resaltar la sintaxis correspondiente al lenguaje de programación especificado. Esto
+                        mejora la legibilidad y comprensión del código al aplicar colores distintivos a las diferentes
+                        propiedades y elementos del lenguaje de programación utilizado.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer class="medium-padding">
+        <p class="center-align">&copy; 2023 mdHTML. All rights reserved. | Licensed under MIT | Developed by <a
+                href="https://galgar.dev" target="_blank" rel="nofollow">galgar.dev</a></p>
     </footer>
+    <script src="./assets/js/main.min.js"></script>
     <script src="./assets/js/marked.min.js"></script>
     <script src="./assets/js/prism.min.js"></script>
-    <script src="./assets/js/main.min.js"></script>
+    <script src="./assets/js/app.min.js"></script>
 </body>
 
 </html>
