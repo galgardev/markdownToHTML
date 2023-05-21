@@ -59,24 +59,23 @@
                     <div class="absolute middle center-align white-text large-padding">
                         <h1 class="large large-margin">mdHTML</h1>
                         <h6 class="large-margin">Convierte y da formato a tus archivos Markdown a HTML en un solo clic
-                            con
-                            esta
-                            herramienta.</h6>
+                            con esta herramienta.</h6>
                     </div>
                 </article>
             </div>
             <div class="s12 m12 l12">
                 <div class="medium-padding">
-                    <div class="medium-height middle-align center-align border round">
+                    <div id="uploadContainer" class="medium-height middle-align center-align border round">
                         <div class="center-align">
-                            <i class="extra">upload</i>
-                            <h5 class="center-align">Sube tu archivo Markdown</h5>
-                            <p class="center-align">Arrastra y suelta aquí un archivo o haz clic para
+                            <i id="uploadIcon" class="extra">upload</i>
+                            <div id="fireworksContainer"></div>
+                            <h5 id="uploadStatus" class="center-align">Sube tu archivo Markdown</h5>
+                            <p id="fileName" class="center-align">Arrastra y suelta aquí un archivo o haz clic para
                                 seleccionarlo.</p>
                             <div class="space"></div>
                             <nav class="center-align">
                                 <button id="renderButton" type="button" onclick="renderMarkdown()"
-                                    class="large responsive">Renderizar</button>
+                                    class="large responsive" disabled>Renderizar</button>
                             </nav>
                         </div>
                         <input type="file" id="uploadedFile" name="uploadedFile" accept=".md">
@@ -127,6 +126,7 @@
         <p class="center-align">&copy; 2023 mdHTML. All rights reserved. | Licensed under MIT | Developed by <a
                 href="https://galgar.dev" target="_blank" rel="nofollow">galgar.dev</a></p>
     </footer>
+    <script src="./assets/js/beer.min.js"></script>
     <script src="./assets/js/main.min.js"></script>
     <script src="./assets/js/marked.min.js"></script>
     <script src="./assets/js/prism.min.js"></script>
