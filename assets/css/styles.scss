@@ -63,7 +63,8 @@ body.dark {
     font-family: Google Sans;
     font-style: normal;
     font-weight: 400;
-    src: local('Google Sans'), url('../font/googlegansregular.woff') format('woff')
+    src: local('Google Sans'), url('../font/googlegansregular.woff') format('woff');
+    font-display: swap
 }
 
 h1,
