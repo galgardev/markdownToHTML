@@ -1,1 +1,1 @@
-#renderButton{z-index:9999}label[for=uploadedFile]{display:none}
+#renderButton{z-index:9999}label[for=uploadedFile]{position:absolute;left:-9999px;top:-9999px}
