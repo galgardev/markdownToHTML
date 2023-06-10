@@ -8,39 +8,16 @@
     src: url('../font/ibmplexmono.woff2') format("woff2");
 }
 
-body p,
-h5,
-li {
-    line-height: var(--line-height-m);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-ul {
-    color: var(--content-color-primary);
-}
-
 :root {
-    --base-color-brand: #FF6B6B;
-    --base-color-info: #097bed;
-    --base-color-warning: #ffb400;
-    --base-color-error: #eb2013;
-    --base-color-success: #0cbb52;
     --content-color-primary: #212121;
     --content-color-secondary: #6B6B6B;
     --content-color-tertiary: #DDDDDD;
-    --content-color-constant: #ffffff;
     --content-color-link: #0265D2;
     --code-color-punctuation: #5f6364;
     --code-color-property: #c92c2c;
     --code-color-operator: #a67f59;
     --code-color-selector: #2f9c0a;
     --code-color-keyword: #1990b8;
-    --highlight-background-color-brand: #FF5252;
     --text-family-default: "Inter", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, Arial, sans-serif;
     --text-family-code: "IBM Plex Mono", "Cousine", monospace;
     --text-size-m: 12px;
@@ -80,6 +57,22 @@ body {
     margin: var(--spacing-zero) auto;
     max-width: 768px;
     padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+body p,
+h5,
+li {
+    line-height: var(--line-height-m);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
+    color: var(--content-color-primary);
 }
 
 h1,
